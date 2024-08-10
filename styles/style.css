@@ -1,0 +1,146 @@
+@import url("https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+:root {
+  --color-primario: #000000;
+  --color-secundario: #f6f6f6;
+  --color-terciario: #22d4fd;
+  --color-hover: #272727;
+
+  --fuente-montserrat: "Montserrat", sans-serif;
+  --fuente-Kronaone: "Krona One", sans-serif;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: var(--color-primario);
+  color: var(--color-secundario);
+  /* height: 100vh; */
+  box-sizing: border-box;
+}
+.header {
+  padding: 2% 0 0 11%; /*Top rigth bottom left*/
+}
+.menu_header {
+  /*pongo flex aca para que no afecte otro elemento dentro del header*/
+  display: flex;
+  gap: 80px;
+}
+.link_menu_header {
+  text-decoration: none;
+  font-size: 1.5rem; /*=24px  rem es relativo al tamaño de la fuente 
+  raíz (root element), que suele ser el tamaño de la fuente definido en el html 
+  (por defecto, 16px en la mayoría de los navegadores). Esto permite que, al cambiar 
+  el tamaño de la fuente raíz, todos los elementos que usan rem se escalen proporcionalmente, 
+  lo que facilita el ajuste de todo el diseño.*/
+
+  font-family: var(--fuente-montserrat);
+  font-weight: 600;
+  color: var(--color-terciario);
+}
+.presentacion {
+  display: flex;
+  align-items: center;
+  /* margin: 10% 11%; vertical y horizontal*/
+  padding: 6% 11%;
+  justify-content: space-between;
+  /*Se hace dentro de este contenedor, 
+  porque queremos un espacio entre la sección contenido y la imagen*/
+  gap: 82px;
+}
+/*ALIGN.ITEMS= vertical && JUSTIDY-CONTENT= horizontal*/
+.presentacion_contenido {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 40px; /*La propiedad gap no es exclusiva de Flexbox,
+  sin embargo, se utiliza casi siempre en conjunto con él.
+  Esta propiedad especifica en CSS el tamaño de los espacios entre
+  filas y columnas en diseños de cuadrícula, flex y de varias columnas.
+  */
+}
+
+.presentacion_contenido_titulo {
+  font-size: 2.25rem; /*= 36pxTamaño de la fuente*/
+  font-family: var(
+    --fuente-Kronaone
+  ); /*utilizando la fuente que importamos de google fonts*/
+}
+.titulo-destacado {
+  color: var(--color-terciario);
+}
+.presentacion_contenido_texto {
+  font-size: 1.5rem; /*=24px*/ /*Tamaño de la fuente*/
+  font-family: var(
+    --fuente-montserrat
+  ); /*utilizando la fuente que importamos Google Fonts*/
+}
+
+/* CONTENEDOR DE REDES SOCIALES */
+.presentacion_enlaces {
+  display: flex;
+  justify-content: space-between; /*justify es para eje horizontal*/
+  flex-direction: column;
+  align-items: center; /*align es para eje vertical*/
+  gap: 32px;
+}
+.presentacion_link_boton {
+  width: 50%; /*50% de espacio relativo al del contenedor padre*/
+  text-align: center;
+  padding: 21.5px 0; /*Primero vertical, luego, horizontal*/
+  border-radius: 8px; /*redondeo de las esquinas*/
+  font-family: var(--fuente-montserrat);
+  font-size: 1.5rem; /*=24px*/
+  font-weight: 600; /*Semi-bold*/
+  text-decoration: none; /*Para quitar subrayado*/
+  color: var(--color-secundario);
+  border: 2px solid var(--color-terciario);
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.presentacion_enlaces_subtitulo {
+  font-size: 1.5rem; /*=24px*/
+  font-family: var(--fuente-Kronaone);
+  font-weight: 400; /*Regular*/
+}
+.presentacion_link_boton:hover {
+  background-color: var(--color-hover);
+}
+
+.presentacion_imagen {
+  width: 50%;
+}
+
+.footer {
+  background-color: var(--color-terciario);
+  padding: 23px;
+  color: var(--color-primario);
+  text-align: center;
+  font-family: var(--fuente-montserrat);
+  font-size: 1.5rem; /*=24px*/
+  font-weight: 400; /*Regular*/
+}
+/*LIMITE MAXIMO*/
+@media (max-width: 1200px) {
+  /*cuando es menor a 1200, aplica los cambios*/
+
+  .header {
+    padding: 10%;
+  }
+  /*el de abajo ya tiene el flex aplicado desde antes*/
+  .menu_header {
+    justify-content: center;
+  }
+  .presentacion {
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 5%; /*para todos los lados*/
+  }
+  .presentacion_contenido {
+    width: auto; /*adaptarse al elemento padre*/
+  }
+}
